@@ -7,8 +7,16 @@ import { Split } from './schemes';
 class App extends Component {
     componentDidMount() {
         const data = {
-            p128: 0,
-            p132: 1
+            p128: {
+                name: 'T1',
+                value: 123,
+                unit: '°C',
+            },
+            p132: {
+                name: 'T2',
+                value: 33,
+                unit: '°C',
+            }
         };
 
         window.addEventListener("resize", this.updateDimensions.bind(this));
