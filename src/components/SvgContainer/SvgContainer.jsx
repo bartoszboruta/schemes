@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import { connect } from "react-redux";
 
 class SvgContainer extends Component {
@@ -28,3 +29,22 @@ function mapStateToProps(state) {
 
 const ConnectedSvgContainer = connect(mapStateToProps)(SvgContainer);
 export { ConnectedSvgContainer as SvgContainer }
+
+SvgContainer.propTypes = {
+    children: PropTypes.element,
+    dispatch: PropTypes.func.isRequired,
+    dimensions: PropTypes.shape({
+        height: PropTypes.number
+    }),
+    height: PropTypes.number.isRequired,
+    width: PropTypes.number.isRequired,
+};
+
+SvgContainer.defaultProps = {
+    children: null,
+    dimensions: {
+        height: 0
+    },
+    height: 0,
+    width: 0,
+};
