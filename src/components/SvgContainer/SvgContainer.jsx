@@ -31,7 +31,7 @@ const ConnectedSvgContainer = connect(mapStateToProps)(SvgContainer);
 export { ConnectedSvgContainer as SvgContainer }
 
 SvgContainer.propTypes = {
-    children: PropTypes.element,
+    children: PropTypes.array,
     dispatch: PropTypes.func.isRequired,
     dimensions: PropTypes.shape({
         height: PropTypes.number
