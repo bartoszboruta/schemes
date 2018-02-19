@@ -3,100 +3,171 @@ import PropTypes from 'prop-types';
 
 class AutomaticBoiler extends Component {
     static getGradients() {
-        return <defs>
-            <linearGradient
-                id="linearGradient3108"
-                spreadMethod="pad"
-                gradientTransform="matrix(6.46299,0,0,1.58797,152.2596,93.31)"
-                gradientUnits="userSpaceOnUse"
-                y2="0"
-                x2="1"
-                y1="0"
-                x1="0">
-                <stop
-                    id="stop5798"
-                    offset="0"
-                    style={{stopOpacity:1, stopColor:"#c4c2c2"}} />
-                <stop
-                    id="stop5800"
-                    offset="1"
-                    style={{stopOpacity:1, stopColor:"#a0a0a0"}} />
-            </linearGradient>
-            <linearGradient
-                id="linearGradient3106"
-                spreadMethod="pad"
-                gradientTransform="matrix(17.44101,0,0,28.8102,146.7706,90.3645)"
-                gradientUnits="userSpaceOnUse"
-                y2="0"
-                x2="1"
-                y1="0"
-                x1="0">
-                <stop
-                    id="stop5764"
-                    offset="0"
-                    style={{stopOpacity:1, stopColor:"#ebecec"}} />
-                <stop
-                    id="stop5766"
-                    offset="1"
-                    style={{stopOpacity:1, stopColor:"#fefefe"}} />
-            </linearGradient>
-        </defs>
+        return <defs id="defs6620">
+                <linearGradient
+                    id="SVGID_60_"
+                    gradientUnits="userSpaceOnUse"
+                    x1="-0.00048828131"
+                    y1="150.7002"
+                    x2="0.99949998"
+                    y2="150.7002"
+                    gradientTransform="matrix(4.4283,0,0,1.0879,72.668,-83.6042)">
+                    <stop
+                        offset="0"
+                        style={{stopColor:"#C4C2C2"}}
+                        id="stop1519" />
+                    <stop
+                        offset="1"
+                        style={{stopColor:"#A0A0A0"}}
+                        id="stop1521" />
+                </linearGradient>
+                <clipPath
+                    id="SVGID_59_">
+                    <use
+                        height="100%"
+                        width="100%"
+                        y="0"
+                        x="0"
+                        style={{overflow:"visible"}}
+                        xlinkHref="#SVGID_58_"
+                        overflow="visible"
+                        id="use1516" />
+                </clipPath>
+                <linearGradient
+                    id="SVGID_57_"
+                    gradientUnits="userSpaceOnUse"
+                    x1="0"
+                    y1="150.7002"
+                    x2="1"
+                    y2="150.7002"
+                    gradientTransform="matrix(11.9503,0,0,19.7399,68.9063,-2901.7593)">
+                    <stop
+                        offset="0"
+                        style={{stopColor:"#EBECEC"}}
+                        id="stop1488" />
+                    <stop
+                        offset="1"
+                        style={{stopColor:"#FEFEFE"}}
+                        id="stop1490" />
+                </linearGradient>
+                <clipPath
+                    id="SVGID_56_">
+                    <use
+                        height="100%"
+                        width="100%"
+                        y="0"
+                        x="0"
+                        style={{overflow:"visible"}}
+                        xlinkHref="#SVGID_55_"
+                        overflow="visible"
+                        id="use1485" />
+                </clipPath>
+                <rect
+                    id="SVGID_55_"
+                    x="68.908997"
+                    y="63.171001"
+                    width="11.95"
+                    height="19.74" />
+                <rect
+                    id="SVGID_58_"
+                    x="72.668999"
+                    y="79.805"
+                    width="4.428"
+                    height="1.0880001" />
+            </defs>
     }
 
     render() {
         return (
-            <g id="furnace" transform={"translate(" + this.props.left + " " + this.props.top + ")"}>
+            <g className="AutomaticBoiler" transform={"translate(" + this.props.left + " " + this.props.top + ")"}>
                 {
                     AutomaticBoiler.getGradients()
                 }
                 <g>
-                    <path
-                        d="m 68.70724,643.25316 28.298487,0 0,4.33487 -28.298487,0 0,-4.33487 z"
-                        style={{fill:"#999999", fillOpacity:1, fillRule:"evenodd", stroke:"none"}}
-                    />
-                    <g transform="matrix(4.4237819,0,0,-4.4237819,-605.00291,1174.79)">
-                        <path
-                            d="m 146.7709,119.1745 17.4407,0 0,-28.81 -17.4407,0 0,28.81 z"
-                            style={{fill:"url(#linearGradient3106)", fillOpacity:1, fillRule:"evenodd", stroke:"none"}}
-                        />
+                    <rect
+                        style={{clipRule:"evenodd",fill:"#999999", fillRule:"evenodd", strokeWidth:"0.26458341"}}
+                        x="20.04995"
+                        y="3.6522018e-005"
+                        width="23.2299"
+                        height="3.5563002"
+                        id="rect1480" />
+                    <g
+                        transform="matrix(5.3000001,0,0,5.3000001,-365.21769,-331.25001)"
+                        id="g1495"
+                        style={{strokeWidth:"0.04992138"}}>
+                        <rect
+                            style={{fill:"url(#SVGID_57_)", strokeWidth:"0.04992138"}}
+                            x="68.908997"
+                            y="63.171001"
+                            clipPath="url(#SVGID_56_)"
+                            width="11.95"
+                            height="19.74"
+                            id="rect1493" />
                     </g>
-                    <path
-                        d="m 118.62962,647.58803 1.44171,0 0,127.44917 -1.44171,0 0,-127.44917 z"
-                        style={{fill:"#c4c2c2", fillOpacity:1, fillRule:"evenodd", stroke:"none"}}
-                    />
-                    <path
-                        d="m 45.000627,648.33166 1.441713,0 0,126.70554 -1.441713,0 0,-126.70554 z"
-                        style={{fill:"#cccccc", fillOpacity:1, fillRule:"evenodd", stroke:"none"}}
-                    />
-                    <path
-                        d="m 121.43474,774.31611 0,0.72196 0,0.71886 -76.434113,0 0,-1.44082 74.991953,0 0,-126.72675 1.44216,0 0,126.72675 z"
-                        style={{fill:"#808080", fillOpacity:1, fillRule:"evenodd", stroke:"none"}}
-                    />
-                    <path
-                        d="m 120.08415,772.95271 0,1.44214 -0.0132,0 -1.44171,0 -73.628975,0 0,-1.44214 73.628975,0 0,-123.92385 -73.628975,0 0,-1.4395 73.628975,0 1.36296,0 0.0787,0 0,125.36335 0.0132,0 z"
-                        style={{fill:"#c4c2c2", fillOpacity:1, fillRule:"evenodd", stroke:"none"}}
-                    />
-                    <path
-                        d="m 69.425652,643.25316 26.86165,0 0,4.33487 -26.86165,0 0,-4.33487 z"
-                        style={{fill:"#808080", fillOpacity:1, fillRule:"evenodd", stroke:"none"}}
-                    />
-                    <path
-                        d="m 65.600852,752.13792 34.512138,0 0,12.71528 -34.512138,0 0,-12.71528 z"
-                        style={{fill:"#b2b2b2", fillOpacity:1, fillRule:"evenodd", stroke:"none"}}
-                    />
-                    <path
-                        d="m 66.476315,753.0886 32.760312,0 0,10.8157 -32.760312,0 0,-10.8157 z"
-                        style={{fill:"#cccccc", fillOpacity:1, fillRule:"evenodd", stroke:"none"}}
-                    />
-                    <path
-                        d="m 67.44689,753.99016 30.820487,0 0,9.01124 -30.820487,0 0,-9.01124 z"
-                        style={{fill:"#808080", fillOpacity:1, fillRule:"evenodd", stroke:"none"}}
-                    />
-                    <g transform="matrix(4.4237819,0,0,-4.4237819,-605.00291,1174.79)">
-                        <path
-                            d="m 152.2602,94.8971 6.4624,0 0,-1.5871 -6.4624,0 0,1.5871 z"
-                            style={{fill:"url(#linearGradient3108)", fillOpacity:1, fillRule:"evenodd", stroke:"none"}}
-                        />
+                    <rect
+                        style={{clipRule:"evenodd",fill:"#c4c2c2", fillRule:"evenodd", strokeWidth:"0.26458341"}}
+                        x="61.029572"
+                        y="3.556349"
+                        width="1.1872001"
+                        height="104.62201"
+                        id="rect1497" />
+                    <rect
+                        style={{clipRule:"evenodd",fill:"#cccccc", fillRule:"evenodd", strokeWidth:"0.26458341"}}
+                        x="0.5883109"
+                        y="4.1658311"
+                        width="1.1872001"
+                        height="104.01251"
+                        id="rect1499" />
+                    <polygon
+                        transform="matrix(5.3000001,0,0,5.3000001,-365.21769,-331.25001)"
+                        style={{clipRule:"evenodd",fill:"#808080", fillRule:"evenodd", strokeWidth:"0.04992138"}}
+                        points="80.858,82.799 80.858,82.911 80.858,83.022 69.02,83.022 69.02,82.799 80.635,82.799 80.635,63.171 80.858,63.171 "
+                        id="polygon1501" />
+                    <polygon
+                        transform="matrix(5.3000001,0,0,5.3000001,-365.21769,-331.25001)"
+                        style={{clipRule:"evenodd",fill:"#c4c2c2", fillRule:"evenodd", strokeWidth:"0.04992138"}}
+                        points="69.02,63.394 69.02,63.171 80.424,63.171 80.635,63.171 80.647,63.171 80.647,82.588 80.649,82.588 80.649,82.812 80.647,82.812 80.424,82.812 69.02,82.812 69.02,82.588 80.424,82.588 80.424,63.394 "
+                        id="polygon1503" />
+                    <rect
+                        style={{clipRule:"evenodd",fill:"#808080", fillRule:"evenodd", strokeWidth:"0.26458341"}}
+                        x="20.638222"
+                        y="3.6522018e-005"
+                        width="22.053299"
+                        height="3.5563002"
+                        id="rect1505" />
+                    <rect
+                        style={{clipRule:"evenodd",fill:"#b3b3b3", fillRule:"evenodd", strokeWidth:"0.26458341"}}
+                        x="17.500622"
+                        y="89.379242"
+                        width="28.333803"
+                        height="10.441"
+                        id="rect1507" />
+                    <rect
+                        style={{clipRule:"evenodd",fill:"#cccccc", fillRule:"evenodd", strokeWidth:"0.26458341"}}
+                        x="18.216125"
+                        y="90.158356"
+                        width="26.8922"
+                        height="8.8828001"
+                        id="rect1509" />
+                    <rect
+                        style={{clipRule:"evenodd",fill:"#808080", fillRule:"evenodd", strokeWidth:"0.26458341"}}
+                        x="19.016449"
+                        y="90.900337"
+                        width="25.302202"
+                        height="7.3988004"
+                        id="rect1511" />
+                    <g
+                        transform="matrix(5.3000001,0,0,5.3000001,-365.21769,-331.25001)"
+                        id="g1526"
+                        style={{strokeWidth:"0.04992138"}}>
+                        <rect
+                            style={{fill:"url(#SVGID_60_)", strokeWidth:"0.04992138"}}
+                            x="72.668999"
+                            y="79.805"
+                            clipPath="url(#SVGID_59_)"
+                            width="4.428"
+                            height="1.0880001"
+                            id="rect1524" />
                     </g>
                 </g>
             </g>
