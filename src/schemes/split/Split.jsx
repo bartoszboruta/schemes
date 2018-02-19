@@ -6,8 +6,6 @@ import { ReadField, AutomaticBoiler, HeatPump, HeatPumpOutside, Boiler, Heater }
 class Split extends Component {
     render() {
         return <SvgContainer width={725} height={640}>
-            <ReadField param={"p128"} />
-            <ReadField param={"p132"} />
             <HeatPump />
             <HeatPumpOutside top={150} />
             <AutomaticBoiler left={100} />
@@ -16,6 +14,7 @@ class Split extends Component {
 
             <Heater left={300} animate={true} />
 
+            <ReadField left={380} param={"p128"} />
         </SvgContainer>
     }
 }
