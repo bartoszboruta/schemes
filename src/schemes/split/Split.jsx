@@ -1,19 +1,20 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { SvgContainer } from "../../components/SvgContainer";
-import { ReadField, AutomaticBoiler, HeatPump, HeatPumpOutside, Boiler } from "../../components";
+import { ReadField, AutomaticBoiler, HeatPump, HeatPumpOutside, Boiler, Heater } from "../../components";
 
 class Split extends Component {
     render() {
         return <SvgContainer width={725} height={640}>
-            <ReadField param={"p128"} />
-            <ReadField param={"p132"} />
             <HeatPump />
             <HeatPumpOutside top={150} />
             <AutomaticBoiler left={100} />
 
             <Boiler left={200} />
 
+            <Heater left={300} animate={true} />
+
+            <ReadField left={380} param={"p128"} />
         </SvgContainer>
     }
 }
