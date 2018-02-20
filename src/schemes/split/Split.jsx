@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { SvgContainer } from "../../components/SvgContainer";
-import { ReadField, AutomaticBoiler, HeatPump, HeatPumpOutside, Boiler, Heater, Connector } from "../../components";
+import { ReadField, AutomaticBoiler, HeatPump, HeatPumpOutside, Boiler, Heater, Connector, Condenser, FlowHeater } from "../../components";
 
 class Split extends Component {
     render() {
@@ -13,6 +13,8 @@ class Split extends Component {
             <Boiler left={200} />
 
             <Heater left={300} animate={true} />
+            <Condenser left={300} top={100}/>
+            <FlowHeater left={400} top={100}/>
 
             <ReadField left={380} param={"p128"} />
             <Connector left={380} />
