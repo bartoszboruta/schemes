@@ -5,3 +5,5 @@ export * from './HeatPump';
 export * from './Boiler';
 export * from './Heater';
 export * from './Connector';
+export * from './Condenser';
+export * from './FlowHeater';
