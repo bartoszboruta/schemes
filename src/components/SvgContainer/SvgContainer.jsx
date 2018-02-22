@@ -20,7 +20,7 @@ class SvgContainer extends Component {
     }
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
     const { dimensions } = state;
     return {
         dimensions

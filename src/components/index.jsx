@@ -7,3 +7,5 @@ export * from './Heater';
 export * from './Connector';
 export * from './Condenser';
 export * from './FlowHeater';
+export * from './Wall';
+export * from './Pipe';
