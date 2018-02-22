@@ -73,12 +73,12 @@ class ReadField extends Component {
     }
 }
 
-function mapStateToProps(state) {
+const mapStateToProps = (state) => {
     const { data } = state;
     return {
         data
     };
-}
+};
 
 const ConnectedReadField = connect(mapStateToProps)(ReadField);
 export { ConnectedReadField as ReadField }

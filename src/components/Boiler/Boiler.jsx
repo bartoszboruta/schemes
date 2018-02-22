@@ -3,8 +3,7 @@ import PropTypes from 'prop-types';
 
 class Boiler extends Component {
     static getGradients() {
-        return   <defs id="defs6902">
-
+        return   <defs>
             <linearGradient
                 id="SVGID_6_"
                 gradientUnits="userSpaceOnUse"
