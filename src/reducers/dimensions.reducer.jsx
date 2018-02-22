@@ -5,7 +5,7 @@ const initialState = {
     width: 0
 };
 
-export function dimensions(state = initialState, action) {
+export const  dimensions = (state = initialState, action) => {
     switch (action.type) {
         case dimensionsTypes.UPDATE:
             return {
@@ -15,4 +15,4 @@ export function dimensions(state = initialState, action) {
         default:
             return state;
     }
-}
+};
