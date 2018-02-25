@@ -68,6 +68,14 @@ class SplitPanel extends Component {
                             </Row>
                             <Row>
                                 <SelectPart
+                                    description={'Choose boiler type'}
+                                    options={['boiler', 'noBoiler']}
+                                    param={'COType'}
+                                    title={'Boiler Type'}
+                                />
+                            </Row>
+                            <Row>
+                                <SelectPart
                                     description={'Choose additional heat source for CO'}
                                     options={['automatic_boiler', 'heater', 'none']}
                                     param={'additionalHeaterSourceCO'}

@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import PropTypes from 'prop-types';
+import { Connector, Pipe } from "../";
 
 class AutomaticBoiler extends Component {
     static getGradients() {
@@ -83,7 +84,29 @@ class AutomaticBoiler extends Component {
                 {
                     AutomaticBoiler.getGradients()
                 }
+
                 <g>
+
+                    <Pipe
+                        id={'automaticBoiler_1'}
+                        active={true}
+                        activeColor={'hot'}
+                        d={'M 5 40 L 77 40 S 85 40 85 32 L 85 5'}
+                        left={-65}
+                        top={100}
+                    />
+                    <Connector left={-69} top={116} />
+
+                    <Pipe
+                        id={'automaticBoiler_2'}
+                        active={true}
+                        activeColor={'cold'}
+                        d={'M 5 65 L 102 65 S 110 65 110 57 L 110 5'}
+                        left={-65}
+                        top={100}
+                    />
+                    <Connector left={-69} top={141} />
+
                     <rect
                         style={{clipRule:"evenodd",fill:"#999999", fillRule:"evenodd", strokeWidth:"0.26458341"}}
                         x="20.04995"

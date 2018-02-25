@@ -15,25 +15,26 @@ class Pipe extends Component {
         }
     }
 
-    componentDidUpdate() {
-        let animePath = anime.path('.Pipe path');
+    componentDidMount() {
+        const animeId = '#' + this.props.id;
+        const animePath = anime.path(animeId + ' path');
 
         anime({
             autoplay: true,
-            targets: '.Pipe circle',
+            targets: animeId + ' circle',
             translateX: animePath('x'),
             translateY: animePath('y'),
             rotate: animePath('angle'),
             easing: 'linear',
             direction: 'normal',
-            duration: 3000,
+            duration: 8000,
             loop: true
         });
     }
 
     render() {
         return (
-            <g className="Pipe" transform={"translate(" + this.props.left + " " + this.props.top + ")"}>
+            <g id={this.props.id} className="Pipe" transform={"translate(" + this.props.left + " " + this.props.top + ")"}>
                 <circle
                     fill={'black'}
                     r="5" cx="0"  cy="0"
@@ -42,7 +43,7 @@ class Pipe extends Component {
                     style={{
                         fill: "none",
                         stroke: this.props.active ? this.getColor() : 'gray',
-                        strokeWidth: "4.75"
+                        strokeWidth: this.props.strokeWidth
                     }}
                     d={this.props.d}
                 />
@@ -54,17 +55,19 @@ class Pipe extends Component {
 export { Pipe }
 
 Pipe.propTypes = {
-    left: PropTypes.number,
-    top: PropTypes.number,
     active: PropTypes.bool,
     activeColor: PropTypes.string,
     d: PropTypes.string,
+    left: PropTypes.number,
+    strokeWidth: PropTypes.number,
+    top: PropTypes.number,
 };
 
 Pipe.defaultProps = {
-    left: 0,
-    top: 0,
     active: false,
     activeColor: '',
     d: '',
+    left: 0,
+    strokeWidth: 3,
+    top: 0,
 };

@@ -9,14 +9,6 @@ import { SplitPanel } from './panels'
 class App extends Component {
     componentDidMount() {
         const data = { //example
-            CO: {
-                value: false,
-            },
-            additionalHeaterSourceCO: {
-                name: 'automatic_boiler',
-                unit: '',
-                value: true //p208[12] for automatic boiler 208[11] heater
-            },
             CWU: {
                 value: true
             },
@@ -24,6 +16,21 @@ class App extends Component {
                 name: 'heater',
                 unit: '',
                 value: true //p208[11]
+            },
+            CWUType: {
+                name: 'coil',
+                value: true
+            },
+            CO: {
+                value: true,
+            },
+            COType: {
+                name: 'boiler', //noBoiler
+            },
+            additionalHeaterSourceCO: {
+                name: 'automatic_boiler',
+                unit: '',
+                value: true //p208[12] for automatic boiler 208[11] heater
             },
             p128: {
                 name: 'T1',

@@ -59,7 +59,7 @@ class Heater extends Component {
                 height="8.2965469"
                 style={{stroke:"#b3b3b3" ,fill:"#e8e8e8", fillRule:"evenodd"}}>
                 {
-                    this.props.animate &&
+                    this.props.active &&
                         <animate
                             attributeName="fill"
                             dur="8s"
@@ -85,13 +85,13 @@ class Heater extends Component {
 export { Heater }
 
 Heater.propTypes = {
-    animate: PropTypes.bool,
+    active: PropTypes.bool,
     left: PropTypes.number,
     top: PropTypes.number,
 };
 
 Heater.defaultProps = {
-    animate: false,
+    active: false,
     left: 0,
     top: 0,
 };
