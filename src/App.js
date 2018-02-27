@@ -18,7 +18,7 @@ class App extends Component {
                 value: true //p208[11]
             },
             CWUType: {
-                name: 'coil',
+                name: 'coil', //coil //condenser
                 value: true
             },
             CO: {
@@ -50,6 +50,16 @@ class App extends Component {
             p140: {
                 name: 'T6',
                 value: 33,
+                unit: '°C',
+            },
+            p152: {
+                name: 'T12',
+                value: 15,
+                unit: '°C',
+            },
+            p156: {
+                name: 'T14',
+                value: 15,
                 unit: '°C',
             },
         };

@@ -10,3 +10,5 @@ export * from './FlowHeater';
 export * from './Wall';
 export * from './Pipe';
 export * from './Coil';
+export * from './OutputPipe';
+export * from './Pump';

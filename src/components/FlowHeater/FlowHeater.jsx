@@ -72,7 +72,20 @@ class FlowHeater extends Component {
                         fillRule: "evenodd",
                         strokeWidth: "0.21838695"
                     }}
-                    transform="matrix(4.8565804,0,0,4.3173383,-297.29557,-460.33188)" />
+                    transform="matrix(4.8565804,0,0,4.3173383,-297.29557,-460.33188)">
+                    {
+                        this.props.active &&
+                        <animate
+                            attributeName="fill"
+                            dur="8s"
+                            repeatCount="indefinite"
+                            values="
+                                #eab63f;
+                                #f15d05;
+                                #eab63f;"
+                        />
+                    }
+                </rect>
                 <path
                     style={{
                         clipRule: "evenodd",

@@ -27,9 +27,7 @@ class Split extends Component {
 
             <ReadField left={540} param={"p134"} top={366} />
             <ReadField left={540} param={"p140"} top={390} />
-
-            <HeatPump left={597} top={253.4} />
-            <HeatPumpOutside left={747} top={327.2} />
+            <ReadField left={540} param={"p152"} top={390} />
 
             {
                 this.props.data.CO.value && <CO />
@@ -39,7 +37,8 @@ class Split extends Component {
                 this.props.data.CWU.value && <CWU />
             }
 
-            {/*<FlowHeater left={400} top={100} />*/}
+            <HeatPump left={597} top={253.4} />
+            <HeatPumpOutside left={747} top={327.2} />
 
             <Wall left={597} top={168} />
             {/*<Connector left={380} />*/}

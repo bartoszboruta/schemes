@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { AutomaticBoiler, Boiler, Heater, FlowHeater, ReadField, Pipe } from "../../../components";
+import { AutomaticBoiler, Boiler, Heater, FlowHeater, ReadField, Pipe, OutputPipe } from "../../../components";
 
 class CO extends Component {
     getAdditionalHeaterSource() {
@@ -15,7 +15,7 @@ class CO extends Component {
                     return <Heater left={298} top={430} active={this.props.data.additionalHeaterSourceCO.value} />;
                 }
                 if (this.props.data.COType.name === 'noBoiler') {
-                    return <FlowHeater left={392.5} top={471.5} />;
+                    return <FlowHeater left={392.5} top={471.5} active={this.props.data.additionalHeaterSourceCO.value}/>;
                 }
                 return null;
             default:
@@ -42,6 +42,9 @@ class CO extends Component {
                         left={344}
                         top={345}
                     />
+
+                    <OutputPipe active={true} activeColor={'hot'} left={80} top={330} />
+                    <OutputPipe active={true} activeColor={'cold'} left={100} top={350} />
 
                     <Boiler left={255.7} top={311.7} />
                     {
