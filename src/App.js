@@ -18,8 +18,8 @@ class App extends Component {
                 value: true //p208[11]
             },
             CWUType: {
-                name: 'coil', //coil //condenser
-                value: true
+                name: 'condenser', //coil //condenser
+                value: false
             },
             CO: {
                 value: true,
@@ -62,6 +62,36 @@ class App extends Component {
                 value: 15,
                 unit: '°C',
             },
+            hasCircuit1: {
+                value: true,
+            },
+            circuit1: {
+                value: true
+            },
+            hasCircuit2: {
+                value: true,
+            },
+            circuit2: {
+                value: false
+            },
+            hasCircuit3: {
+                value: true,
+            },
+            circuit3: {
+                value: true
+            },
+            temperatureSensor: {
+                name: 'analog', // digital
+            },
+            PC1: {
+                value: 10
+            },
+            PC2: {
+                value: 0
+            },
+            Output: {
+                value: false //any of circuits is active
+            }
         };
 
         window.addEventListener("resize", this.updateDimensions.bind(this));

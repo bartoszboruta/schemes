@@ -4,7 +4,10 @@ const initialState = {
     CO: {},
     CWU: {},
     p128: {},
-    p123: {}
+    p123: {},
+    PC1: {},
+    PC2: {},
+    Output: {},
 };
 
 export const data = (state = initialState, action) => {

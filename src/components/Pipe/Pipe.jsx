@@ -1,52 +1,48 @@
 import React, {Component} from "react";
 import PropTypes from 'prop-types';
-import anime from 'animejs';
 
 class Pipe extends Component {
 
     getColor() {
-        switch (this.props.activeColor) {
+        switch (this.props.active && this.props.activeColor) {
             case 'hot':
-                return 'red';
+                return '#fd5757';
             case 'cold':
-                return 'blue';
+                return '#4444ea';
             default:
                 return 'gray';
         }
     }
 
-    componentDidMount() {
-        const animeId = '#' + this.props.id;
-        const animePath = anime.path(animeId + ' path');
-
-        anime({
-            autoplay: true,
-            targets: animeId + ' circle',
-            translateX: animePath('x'),
-            translateY: animePath('y'),
-            rotate: animePath('angle'),
-            easing: 'linear',
-            direction: 'normal',
-            duration: 8000,
-            loop: true
-        });
-    }
-
     render() {
         return (
-            <g id={this.props.id} className="Pipe" transform={"translate(" + this.props.left + " " + this.props.top + ")"}>
-                <circle
-                    fill={'black'}
-                    r="5" cx="0"  cy="0"
-                />
+            <g className="Pipe" transform={"translate(" + this.props.left + " " + this.props.top + ")"}>
                 <path
                     style={{
                         fill: "none",
-                        stroke: this.props.active ? this.getColor() : 'gray',
+                        stroke: this.getColor(),
                         strokeWidth: this.props.strokeWidth
                     }}
-                    d={this.props.d}
+                    id={ this.props.id }
+                    d={ this.props.d }
                 />
+                {
+                    this.props.active &&
+                        <circle
+                            fill={this.getColor()}
+                            r="4" cx="0" cy="0">
+                                <animateMotion
+                                    dur="10s"
+                                    rotate="auto"
+                                    repeatCount="indefinite"
+                                    keyPoints="1;0"
+                                    keyTimes="0;1"
+                                    calcMode="linear"
+                                >
+                                    <mpath xlinkHref={ '#' + this.props.id } />
+                                </animateMotion>
+                        </circle>
+                }
             </g>
         )
     }

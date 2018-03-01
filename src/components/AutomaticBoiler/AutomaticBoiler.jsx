@@ -107,7 +107,7 @@ class AutomaticBoiler extends Component {
                     />
                     <Connector left={-69} top={141} />
 
-                    <Pump top={-10}/>
+                    <Pump top={125} left={32} active={this.props.active} activeDuration={'2s'}/>
 
                     <rect
                         style={{clipRule:"evenodd",fill:"#999999", fillRule:"evenodd", strokeWidth:"0.26458341"}}

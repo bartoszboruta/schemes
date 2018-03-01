@@ -4,11 +4,15 @@ import PropTypes from 'prop-types';
 class OutputPipe extends Component {
 
     getColor() {
+        if (!this.props.active) {
+            return 'gray';
+        }
+
         switch (this.props.activeColor) {
             case 'hot':
-                return 'red';
+                return '#fd5757';
             case 'cold':
-                return 'blue';
+                return '#4444ea';
             default:
                 return 'gray';
         }
@@ -18,10 +22,9 @@ class OutputPipe extends Component {
         return (
             <g className="OutputPipe" transform={"translate(" + this.props.left + " " + this.props.top + ")"}>
                 <rect
-                    id="_651014824"
                     x="0"
                     y="0"
-                    width="85.509003"
+                    width="95.509003"
                     height="9.4820004"
                     rx="1.4220989"
                     ry="1.4220989"

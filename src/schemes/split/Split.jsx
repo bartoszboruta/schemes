@@ -10,7 +10,7 @@ class Split extends Component {
 
             <Pipe
                 id={'split_1'}
-                active={true}
+                active={this.props.data.PC1.value > 0 || this.props.data.PC2.value > 0}
                 activeColor={'hot'}
                 d={'M 5 5 L 42 5 S 50 5 50 13 L 50 122 S 50 130 58 130 L 110 130'}
                 left={652}
@@ -18,7 +18,7 @@ class Split extends Component {
             />
             <Pipe
                 id={'split_2'}
-                active={true}
+                active={this.props.data.PC1.value > 0 || this.props.data.PC2.value > 0}
                 activeColor={'cold'}
                 d={'M 5 5 L 32 5 S 40 5 40 13 L 40 122 S 40 130 48 130 L 120 130'}
                 left={637}
@@ -30,18 +30,17 @@ class Split extends Component {
             <ReadField left={540} param={"p152"} top={390} />
 
             {
-                this.props.data.CO.value && <CO />
+                this.props.data.CWU.value && <CWU />
             }
 
             {
-                this.props.data.CWU.value && <CWU />
+                this.props.data.CO.value && <CO />
             }
 
             <HeatPump left={597} top={253.4} />
             <HeatPumpOutside left={747} top={327.2} />
 
             <Wall left={597} top={168} />
-            {/*<Connector left={380} />*/}
 
         </SvgContainer>
     }
@@ -52,7 +51,7 @@ const mapStateToProps = (state) => {
     return {
         data,
     };
-}
+};
 
 const ConnectedSplit = connect(mapStateToProps)(Split);
 export { ConnectedSplit as Split }

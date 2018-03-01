@@ -1,33 +1,16 @@
 import React, {Component} from "react";
 import PropTypes from 'prop-types';
-import anime from 'animejs';
 
 class Pump extends Component {
-
-    componentDidMount() {
-        anime({
-            autoplay: true,
-            backgroundColor: '#FFF',
-            duration: 8000,
-            loop: true,
-            rotate: {
-                value: 360,
-                easing: 'linear',
-                round: true,
-            },
-            targets: '#etstest'
-        });
-    }
-
     render() {
         return (
             <g className="Pump" transform={"translate(" + this.props.left + " " + this.props.top + ")"}>
+
                 <circle
-                    style={{fill:"#ffffff", fillRule:"evenodd",strokeWidth:"0.03173381"}}
-                    transform="scale(-1)"
-                    r="10.96113"
-                    cy="-12.063477"
-                    cx="-12.578919" />
+                    style={{fill:"#ffffff", fillRule:"nonzero", strokeWidth:"0.26458332"}}
+                    cx="12.324"
+                    cy="11.817003"
+                    r="11.824"/>
                 <path
                     style={{fill:"#666666", fillRule:"nonzero", strokeWidth:"0.00461961"}}
                     d="m 12.49848,1.8945714 c -0.15197,0 -0.30352,0.004 -0.45409,0.0127 2.62494,0.11557 4.99458,1.22783 6.73555,2.9688 h 0.003 c 1.84036,1.83901 2.97951,4.38336 2.97951,7.1909196 0,2.80493 -1.13915,5.34783 -2.97951,7.18824 l -0.003,0.003 c -1.74097,1.74097 -4.11061,2.85328 -6.73555,2.9688 0.1507,0.008 0.30224,0.0127 0.45409,0.0127 2.80624,0 5.34783,-1.13914 7.18824,-2.97955 l 0.004,-0.003 c 1.83901,-1.84041 2.97951,-4.38331 2.97951,-7.18825 0,-2.8075596 -1.1405,-5.3518996 -2.97951,-7.1909096 h -0.004 c -1.84041,-1.84037 -4.382,-2.97951 -7.18824,-2.97951 z"
@@ -45,28 +28,21 @@ class Pump extends Component {
                     d="m 12.5781,0.0022015 c -0.1816,0 -0.36151,0.004 -0.53871,0.0127 3.11387,0.13716 5.9255,1.4575199 7.99153,3.5222499 h 0.004 c 2.18291,2.18427 3.53566,5.20277 3.53566,8.5342596 0,3.32884 -1.35275,6.34594 -3.53566,8.53025 l -0.004,0.003 c -2.06603,2.06612 -4.87766,3.38662 -7.99153,3.52364 0.17737,0.008 0.35728,0.0127 0.53871,0.0127 3.32875,0 6.34458,-1.35143 8.52885,-3.53574 l 0.004,-0.003 c 2.18427,-2.18431 3.53571,-5.20141 3.53571,-8.53024 0,-3.3314996 -1.35144,-6.3499996 -3.53571,-8.5342696 h -0.004 C 18.92268,1.3548414 15.90685,0.0034015 12.5781,0.0034015 Z"
                  />
 
-                <g>
+                <g transform="rotate(360)">
                     <path
-                        style={{fill:"#999999", stroke:"#999999", fillRule:"nonzero", strokeWidth:"0.23623003"}}
-                        d="M 12.588755,19.683483 5.6060345,7.632849 H 19.551034 Z"
-                    />
-                    <path
-                        style={{fill:"#666666", stroke:"#666666", fillRule:"nonzero", strokeWidth:"0.23623003"}}
-                        d="m 5.6060345,7.632849 0.444402,0.769725 H 19.109034 l 0.442,-0.769725 z"
-                    />
-                    <path
-                        style={{fill:"#cccccc", stroke:"#cccccc", fillRule:"nonzero", strokeWidth:"0.23623003"}}
-                        d="M 5.6060345,7.632849 12.574863,19.703215 12.9857,18.991624 6.4146305,7.632849 Z"
-                    />
+                        style={{fill:"#dddddd", fillRule:"nonzero", strokeWidth:"0.26458454"}}
+                        d="m 18.692232,15.215338 -6.368366,0 -6.3683662,0 3.184183,-5.5151669 3.1841832,-5.5151669 3.184183,5.5151667 z"/>
 
-                    <animateTransform attributeType="xml"
-                        attributeName="transform"
-                        type="rotate"
-                        from="0 180 50"
-                        to="0 180 50"
-                        dur="4s"
-                        repeatCount="indefinite"
-                    />
+                        {
+                            this.props.active && <animateTransform
+                                attributeName="transform"
+                                attributeType="XML"
+                                dur={this.props.activeDuration}
+                                repeatCount="indefinite"
+                                type="rotate"
+                                from="0 11.911 12 "
+                                to="360 11.911 12 " />
+                        }
 
                 </g>
             </g>
@@ -77,11 +53,13 @@ class Pump extends Component {
 export { Pump }
 
 Pump.propTypes = {
+    activeDuration: PropTypes.string,
     left: PropTypes.number,
     top: PropTypes.number,
 };
 
 Pump.defaultProps = {
+    activeDuration: '2s',
     left: 0,
     top: 0,
 };

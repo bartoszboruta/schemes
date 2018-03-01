@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { AutomaticBoiler, Boiler, Heater, FlowHeater, ReadField, Pipe, OutputPipe } from "../../../components";
+import { AutomaticBoiler, Boiler, Heater, FlowHeater, ReadField, Pipe, Connector, Pump, Valve } from "../../../components";
+import { COOutput } from './COOutput';
 
 class CO extends Component {
     getAdditionalHeaterSource() {
@@ -24,32 +25,81 @@ class CO extends Component {
     }
 
     render() {
-        return <g>
+        return <g className={'CO'}>
             { this.props.data.COType.name === 'boiler' && <g>
-                    <Pipe
-                        id={"CO_1"}
-                        active={true}
-                        activeColor={'hot'}
-                        d={'M 5 5 L 22 5 S 30 5 30 13 L 30 142 S 30 150 38 150 L 261 150 S 269 150 269 142 L 269 20'}
-                        left={347}
-                        top={330}
-                    />
-                    <Pipe
-                        id={"CO_2"}
-                        active={true}
-                        activeColor={'cold'}
-                        d={'M 5 160 L 289 160 S 297 160 297 152 L 297 5'}
-                        left={344}
-                        top={345}
-                    />
+                    {
+                        this.props.data.CWU.value && <g>
+                            <Pipe
+                                id={"CO_1_1"}
+                                active={true}
+                                activeColor={'hot'}
+                                d={'M 5 5 L 22 5 S 30 5 30 13 L 30 142 S 30 150 38 150 L 175 150'}
+                                left={347}
+                                top={330}
+                            />
+                            <Pipe
+                                id={"CO_1_2"}
+                                active={true}
+                                activeColor={'hot'}
+                                d={'M 175 150 L 261 150 S 269 150 269 142 L 269 20'}
+                                left={347}
+                                top={330}
+                            />
 
-                    <OutputPipe active={true} activeColor={'hot'} left={80} top={330} />
-                    <OutputPipe active={true} activeColor={'cold'} left={100} top={350} />
+                            <Pipe
+                                id={"CO_2_1"}
+                                active={true}
+                                activeColor={'cold'}
+                                d={'M 5 160 L 152 160'}
+                                left={344}
+                                top={345}
+                            />
+                            <Pipe
+                                id={"CO_2_2"}
+                                active={true}
+                                activeColor={'cold'}
+                                d={'M 152 160 L 289 160 S 297 160 297 152 L 297 5'}
+                                left={344}
+                                top={345}
+                            />
+                            <Valve left={514.2} top={472.5}/>
+                        </g>
+                    }
+                    {
+                        !this.props.data.CWU.value && <g>
+                            <Pipe
+                                id={"CO_1"}
+                                active={true}
+                                activeColor={'hot'}
+                                d={'M 5 5 L 22 5 S 30 5 30 13 L 30 142 S 30 150 38 150 L 261 150 S 269 150 269 142 L 269 20'}
+                                left={347}
+                                top={330}
+                            />
+
+                            <Pipe
+                                id={"CO_2"}
+                                active={true}
+                                activeColor={'cold'}
+                                d={'M 5 160 L 289 160 S 297 160 297 152 L 297 5'}
+                                left={344}
+                                top={345}
+                            />
+                        </g>
+                    }
+
+                    <COOutput left={0} top={330} />
 
                     <Boiler left={255.7} top={311.7} />
                     {
                         this.getAdditionalHeaterSource()
                     }
+
+                    <Connector left={255.7} top={311} />
+                    <Connector left={255.7} top={481} />
+
+                    <Connector left={341} top={311} />
+                    <Connector left={341} top={481} />
+
                     <ReadField left={180} param={"p132"} top={420} />
                 </g>
             }
@@ -78,6 +128,7 @@ class CO extends Component {
                 </g>
             }
 
+            <Pump left={628.5} top={400} active={1} />
         </g>
     }
 }

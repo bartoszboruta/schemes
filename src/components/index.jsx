@@ -12,3 +12,5 @@ export * from './Pipe';
 export * from './Coil';
 export * from './OutputPipe';
 export * from './Pump';
+export * from './Circuit';
+export * from './Valve';

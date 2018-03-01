@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { Boiler, Condenser, Connector, Heater, Pipe, ReadField, Coil } from '../../../components';
+import { Boiler, Condenser, Connector, Heater, Pipe, ReadField, Coil, Pump } from '../../../components';
 
 class CWU extends Component {
 
@@ -19,13 +19,12 @@ class CWU extends Component {
                 return <Condenser left={430} top={170} active={this.props.data.CWUType.value} />;
             case 'coil':
             default:
-                return <Coil left={275.7} top={182} active={true} />;
+                return <Coil left={275.7} top={182} active={this.props.data.CWUType.value} />;
         }
     }
 
     render() {
-        return <g>
-
+        return <g className={'CWU'}>
             <Pipe
                 id={'CWU_1'}
                 active={true}
