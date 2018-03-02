@@ -13,7 +13,6 @@ class SelectPart extends Component {
     }
 
     render() {
-        console.log();
         return <FormGroup>
             <Col md={3} xs={12}>
                 <ControlLabel>{ this.props.title }</ControlLabel>

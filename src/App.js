@@ -11,33 +11,36 @@ class App extends Component {
         const data = { //example
             CWU: {
                 value: true,
-                visible: true
+                visible: true,
+                type: {
+                    name: 'condenser',
+                    value: true
+                },
+                additionalHeater: {
+                    name: 'heater',
+                    unit: '',
+                    value: true,
+                },
+                circulation: {
+                    value: false,
+                    visible: true,
+                },
             },
-            additionalHeaterSourceCWU: {
-                name: 'heater',
-                unit: '',
-                value: true //p208[11]
-            },
-            CWUType: {
-                name: 'condenser', //coil //condenser
-                value: false
-            },
-            CWUCirc: {
-                value: false,
-                visible: true
-            },
+
             CO: {
                 visible: true,
                 value: true,
+                type: {
+                    name: 'boiler', //noBoiler
+                    value: true
+                },
+                additionalHeater: {
+                    name: 'automatic_boiler', //heater
+                    unit: '',
+                    value: true,
+                }
             },
-            COType: {
-                name: 'boiler', //noBoiler
-            },
-            additionalHeaterSourceCO: {
-                name: 'automatic_boiler',
-                unit: '',
-                value: true //p208[12] for automatic boiler 208[11] heater
-            },
+
             p128: {
                 name: 'T1',
                 value: 123,
@@ -63,8 +66,18 @@ class App extends Component {
                 value: 33,
                 unit: '°C',
             },
+            p150: {
+                name: 'T11',
+                value: 15,
+                unit: '°C',
+            },
             p152: {
                 name: 'T12',
+                value: 15,
+                unit: '°C',
+            },
+            p154: {
+                name: 'T13',
                 value: 15,
                 unit: '°C',
             },
@@ -73,26 +86,23 @@ class App extends Component {
                 value: 15,
                 unit: '°C',
             },
-            hasCircuit1: {
+            Output: {
+                circuit1: {
+                    value: true,
+                    visible: true,
+                },
+                circuit2: {
+                    value: true,
+                    visible: true,
+                },
+                circuit3: {
+                    value: true,
+                    visible: true,
+                },
+                temperatureSensor: {
+                    name: 'analog'
+                },
                 value: true,
-            },
-            circuit1: {
-                value: true
-            },
-            hasCircuit2: {
-                value: true,
-            },
-            circuit2: {
-                value: false
-            },
-            hasCircuit3: {
-                value: true,
-            },
-            circuit3: {
-                value: true
-            },
-            temperatureSensor: {
-                name: 'analog', // digital
             },
             PC1: {
                 value: 10
@@ -100,9 +110,6 @@ class App extends Component {
             PC2: {
                 value: 0
             },
-            Output: {
-                value: false //any of circuits is active
-            }
         };
 
         window.addEventListener("resize", this.updateDimensions.bind(this));
@@ -123,7 +130,7 @@ class App extends Component {
         return (
             <div>
                 <Split />
-                <SplitPanel />
+                {/*<SplitPanel />*/}
             </div>
         );
     }

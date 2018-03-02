@@ -5,18 +5,18 @@ import { COOutput } from './COOutput';
 
 class CO extends Component {
     getAdditionalHeaterSource() {
-        switch (this.props.data.additionalHeaterSourceCO.name) {
+        switch (this.props.data.CO.additionalHeater.name) {
             case 'automatic_boiler':
-                if (this.props.data.COType.name === 'boiler') {
-                    return <AutomaticBoiler left={410} top={250} active={this.props.data.additionalHeaterSourceCO.value} />;
+                if (this.props.data.CO.type.name === 'boiler') {
+                    return <AutomaticBoiler left={410} top={250} active={this.props.data.CO.additionalHeater.value} />;
                 }
                 return null;
             case 'heater':
-                if (this.props.data.COType.name === 'boiler') {
-                    return <Heater left={298} top={430} active={this.props.data.additionalHeaterSourceCO.value} />;
+                if (this.props.data.CO.type.name === 'boiler') {
+                    return <Heater left={298} top={430} active={this.props.data.CO.additionalHeater.value} />;
                 }
-                if (this.props.data.COType.name === 'noBoiler') {
-                    return <FlowHeater left={392.5} top={471.5} active={this.props.data.additionalHeaterSourceCO.value}/>;
+                if (this.props.data.CO.type.name === 'noBoiler') {
+                    return <FlowHeater left={392.5} top={471.5} active={this.props.data.CO.additionalHeater.value}/>;
                 }
                 return null;
             default:
@@ -26,7 +26,7 @@ class CO extends Component {
 
     render() {
         return <g className={'CO'}>
-            { this.props.data.COType.name === 'boiler' && <g>
+            { this.props.data.CO.type.name === 'boiler' && <g>
                     {
                         this.props.data.CWU.visible && <g>
                             <Pipe
@@ -105,7 +105,7 @@ class CO extends Component {
             }
 
             {
-                this.props.data.COType.name === 'noBoiler' && <g>
+                this.props.data.CO.type.name === 'noBoiler' && <g>
                     <Pipe
                         id={"CO_3"}
                         active={true}

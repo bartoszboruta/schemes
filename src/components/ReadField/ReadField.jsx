@@ -28,14 +28,15 @@ class ReadField extends Component {
                 d="M 66.43492,0.85957908 H 49.69012 V 17.601919 h 16.7448 z m -17.17384,-0.85808 H 66.86396 67.293 v 0.42904 17.60041992 0.42904 H 66.86396 49.26108 48.83205 v -0.42904 -17.60041992 -0.42904 z"
             />
             <text
-                x="52.5"
+                x="58"
                 y="12.865"
                 style={{
                     fontSize:9.8102932,
                     fontWeight:"bold",
                     fill:"#4d4d4d",
                     fillRule:"evenodd",
-                    fontFamily:"Arial"
+                    fontFamily:"Arial",
+                    textAnchor:'middle',
                 }}>
                 { this.getValue('name') }
             </text>

@@ -6,7 +6,7 @@ import { SliderPart, TogglePart, SelectPart } from "../parts";
 
 class Cwu extends Component {
     getAdditionalHeaterSource(params) {
-        switch (this.props.data[params.param].name) {
+        switch (this.props.data.CWU[params.param].name) {
             case 'automatic_boiler':
                 return <TogglePart
                     description={params.description}
@@ -33,7 +33,7 @@ class Cwu extends Component {
                         <SelectPart
                             description={'Choose additional heat source for CWU'}
                             options={['heater', 'none']}
-                            param={'additionalHeaterSourceCWU'}
+                            param={'additionalHeater'}
                             title={'Additional CWU heat source'}
                         />
                     </Row>
@@ -41,7 +41,7 @@ class Cwu extends Component {
                         {
                             this.getAdditionalHeaterSource({
                                 description: 'Switch CWU Heater source',
-                                param: 'additionalHeaterSourceCWU',
+                                param: 'additionalHeater',
                                 title: 'CWU Heater Source'
                             })
                         }

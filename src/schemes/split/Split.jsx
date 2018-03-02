@@ -27,7 +27,6 @@ class Split extends Component {
 
             <ReadField left={540} param={"p134"} top={366} />
             <ReadField left={540} param={"p140"} top={390} />
-            <ReadField left={540} param={"p152"} top={390} />
 
             {
                 this.props.data.CWU.visible && <CWU />

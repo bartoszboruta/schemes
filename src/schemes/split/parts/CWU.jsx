@@ -5,24 +5,24 @@ import { Boiler, Condenser, Connector, Heater, Pipe, ReadField, Coil, Pump } fro
 class CWU extends Component {
 
     getAdditionalHeaterSource() {
-        switch (this.props.data.additionalHeaterSourceCWU.name) {
+        switch (this.props.data.CWU.additionalHeater.name) {
             case 'heater':
-                return <Heater left={298} top={150} active={this.props.data.additionalHeaterSourceCWU.value} />;
+                return <Heater left={298} top={150} active={this.props.data.CWU.additionalHeater.value} />;
             default:
                 return null
         }
     }
 
     getType() {
-        switch (this.props.data.CWUType.name) {
+        switch (this.props.data.CWU.type.name) {
             case 'condenser':
                 return <g>
-                    <Condenser left={430} top={170} active={this.props.data.CWUType.value} />
-                    <Pump left={379} top={213} active={this.props.data.CWUType.value} />
+                    <Condenser left={430} top={170} active={this.props.data.CWU.type.value} />
+                    <Pump left={379} top={213} active={this.props.data.CWU.type.value} />
                 </g>;
             case 'coil':
             default:
-                return <Coil left={275.7} top={182} active={this.props.data.CWUType.value} />;
+                return <Coil left={275.7} top={182} active={this.props.data.CWU.type.value} />;
         }
     }
 
@@ -70,16 +70,16 @@ class CWU extends Component {
             }
 
             {
-                this.props.data.CWUCirc.visible && <g>
+                this.props.data.CWU.circulation.visible && <g>
                     <Pipe
                         id={'CWU_Circulation'}
-                        active={this.props.data.CWUCirc.value}
+                        active={this.props.data.CWU.circulation.value}
                         activeColor={'hot'}
                         d={'M 5 5 L 5 112 S 5 120 13 120 L 140 120'}
                         left={120}
                         top={5}
                     />
-                    <Pump left={112.5} top={40} active={this.props.data.CWUCirc.value} />
+                    <Pump left={112.5} top={40} active={this.props.data.CWU.circulation.value} />
                     <ReadField left={135} param={'p146'} top={80} />
                 </g>
             }

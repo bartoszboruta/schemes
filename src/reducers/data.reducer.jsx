@@ -1,13 +1,24 @@
 import { dataTypes } from '../types';
 
 const initialState = {
-    CO: {},
-    CWU: {},
-    p128: {},
-    p123: {},
+    CO: {
+        type: {},
+        additionalHeater: {}
+    },
+    CWU: {
+        type: {},
+        additionalHeater: {},
+        circulation: {}
+    },
     PC1: {},
     PC2: {},
-    Output: {},
+    Output: {
+        circuit1: {},
+        circuit2: {},
+        circuit3: {},
+        temperatureSensor: {},
+        value: true,
+    },
 };
 
 export const data = (state = initialState, action) => {
