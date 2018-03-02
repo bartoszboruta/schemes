@@ -3,6 +3,14 @@ import { connect } from "react-redux";
 import { OutputPipe, Circuit, Pipe, ReadField, VerticalReadField } from "../../../components";
 
 class COOutput extends Component {
+    constructor(props) {
+        super(props);
+
+        this.state = {
+            value: false,
+        }
+    }
+
     render() {
         return <g className="COOutput" transform={"translate(" + this.props.left + " " + this.props.top + ")"}>
             <Pipe
@@ -22,20 +30,20 @@ class COOutput extends Component {
             />
 
             {
-                this.props.data.Output.circuit3.value && <g>
+                this.props.data.Output.circuit3.visible && <g>
                     <Circuit active={ this.props.data.Output.circuit3.value } left={30} reversedColors={true} />
                     <OutputPipe active={ this.props.data.Output.value } activeColor={'hot'} left={25} />
                     <OutputPipe active={ this.props.data.Output.value } activeColor={'cold'} left={47} top={20} />
                 </g>
             }
             {
-                this.props.data.Output.circuit2.value && <g>
+                this.props.data.Output.circuit2.visible && <g>
                     <VerticalReadField left={76.5} param={"p154"} top={-166} />
                     <Circuit active={ this.props.data.Output.circuit2.value } left={85} />
                 </g>
             }
             {
-                this.props.data.Output.circuit1.value && <g>
+                this.props.data.Output.circuit1.visible && <g>
                     <VerticalReadField left={131.5} param={"p152"} top={-166} />
                     <ReadField left={176} param={"p150"} top={-60} />
                     <Circuit active={ this.props.data.Output.circuit1.value } left={140} />

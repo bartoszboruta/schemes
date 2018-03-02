@@ -17,7 +17,6 @@ const initialState = {
         circuit2: {},
         circuit3: {},
         temperatureSensor: {},
-        value: true,
     },
 };
 

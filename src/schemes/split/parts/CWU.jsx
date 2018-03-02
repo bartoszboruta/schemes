@@ -93,6 +93,7 @@ class CWU extends Component {
                 top={5}
             />
             <Pipe
+                anime={false}
                 id={'CWU_1_1'}
                 active={true}
                 activeColor={'cold'}

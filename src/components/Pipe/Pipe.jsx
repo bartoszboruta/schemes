@@ -27,7 +27,7 @@ class Pipe extends Component {
                     d={ this.props.d }
                 />
                 {
-                    this.props.active &&
+                    this.props.active && this.props.anime &&
                         <circle
                             fill={this.getColor()}
                             r="4" cx="0" cy="0">
@@ -52,6 +52,7 @@ export { Pipe }
 
 Pipe.propTypes = {
     active: PropTypes.bool,
+    anime: PropTypes.bool,
     activeColor: PropTypes.string,
     d: PropTypes.string,
     left: PropTypes.number,
@@ -61,6 +62,7 @@ Pipe.propTypes = {
 
 Pipe.defaultProps = {
     active: false,
+    anime: true,
     activeColor: '',
     d: '',
     left: 0,
