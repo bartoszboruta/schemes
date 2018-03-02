@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import { AutomaticBoiler, Boiler, Heater, FlowHeater, ReadField, Pipe, Connector, Pump, Valve } from "../../../components";
+import { AutomaticBoiler, Boiler, Heater, FlowHeater, ReadField, Pipe, Connector, Valve } from "../../../components";
 import { COOutput } from './COOutput';
 
 class CO extends Component {
@@ -28,7 +28,7 @@ class CO extends Component {
         return <g className={'CO'}>
             { this.props.data.COType.name === 'boiler' && <g>
                     {
-                        this.props.data.CWU.value && <g>
+                        this.props.data.CWU.visible && <g>
                             <Pipe
                                 id={"CO_1_1"}
                                 active={true}
@@ -66,7 +66,7 @@ class CO extends Component {
                         </g>
                     }
                     {
-                        !this.props.data.CWU.value && <g>
+                        !this.props.data.CWU.visible && <g>
                             <Pipe
                                 id={"CO_1"}
                                 active={true}
@@ -127,8 +127,6 @@ class CO extends Component {
                     }
                 </g>
             }
-
-            <Pump left={628.5} top={400} active={1} />
         </g>
     }
 }

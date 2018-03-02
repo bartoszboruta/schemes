@@ -10,7 +10,8 @@ class App extends Component {
     componentDidMount() {
         const data = { //example
             CWU: {
-                value: true
+                value: true,
+                visible: true
             },
             additionalHeaterSourceCWU: {
                 name: 'heater',
@@ -21,7 +22,12 @@ class App extends Component {
                 name: 'condenser', //coil //condenser
                 value: false
             },
+            CWUCirc: {
+                value: false,
+                visible: true
+            },
             CO: {
+                visible: true,
                 value: true,
             },
             COType: {
@@ -49,6 +55,11 @@ class App extends Component {
             },
             p140: {
                 name: 'T6',
+                value: 33,
+                unit: '°C',
+            },
+            p146: {
+                name: 'T9',
                 value: 33,
                 unit: '°C',
             },

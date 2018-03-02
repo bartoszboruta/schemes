@@ -20,13 +20,13 @@ class SplitPanel extends Component {
                         <TogglePart param={'CWU'} title={'CWU'} description={'CWU part'}/>
                     </Row>
                     {
-                        this.props.data.CWU.value && <Cwu />
+                        this.props.data.CWU.visible && <Cwu />
                     }
                     <Row>
                         <TogglePart param={'CO'} title={'CO'} description={'CO part'}/>
                     </Row>
                     {
-                        this.props.data.CO.value && <Co />
+                        this.props.data.CO.visible && <Co />
                     }
                 </Row>
             </Grid>

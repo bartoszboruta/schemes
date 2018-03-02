@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import { SvgContainer } from "../../components/SvgContainer";
-import { ReadField, HeatPump, HeatPumpOutside, Wall, Pipe } from "../../components";
+import { ReadField, HeatPump, HeatPumpOutside, Wall, Pipe, Pump } from "../../components";
 import { CWU, CO } from "./parts";
 
 class Split extends Component {
@@ -30,17 +30,18 @@ class Split extends Component {
             <ReadField left={540} param={"p152"} top={390} />
 
             {
-                this.props.data.CWU.value && <CWU />
+                this.props.data.CWU.visible && <CWU />
             }
 
             {
-                this.props.data.CO.value && <CO />
+                this.props.data.CO.visible && <CO />
             }
 
             <HeatPump left={597} top={253.4} />
             <HeatPumpOutside left={747} top={327.2} />
 
             <Wall left={597} top={168} />
+            <Pump left={628.5} top={420} active={1} />
 
         </SvgContainer>
     }

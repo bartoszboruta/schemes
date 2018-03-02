@@ -6,7 +6,7 @@ import Toggle from 'material-ui/Toggle';
 
 class TogglePart extends Component {
     onToggleHandler(e, checked) {
-        this.props.updateData(this.props.data[this.props.param]['value'] = checked)
+        this.props.updateData(this.props.data[this.props.param]['visible'] = checked)
     }
 
     render() {
@@ -19,7 +19,7 @@ class TogglePart extends Component {
             <Col md={9} xs={12}>
                 <Toggle
                     onToggle={this.onToggleHandler.bind(this)}
-                    toggled={this.props.data[this.props.param]['value']}
+                    toggled={this.props.data[this.props.param]['visible']}
                 />
             </Col>
         </FormGroup>

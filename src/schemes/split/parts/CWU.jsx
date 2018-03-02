@@ -16,7 +16,10 @@ class CWU extends Component {
     getType() {
         switch (this.props.data.CWUType.name) {
             case 'condenser':
-                return <Condenser left={430} top={170} active={this.props.data.CWUType.value} />;
+                return <g>
+                    <Condenser left={430} top={170} active={this.props.data.CWUType.value} />
+                    <Pump left={379} top={213} active={this.props.data.CWUType.value} />
+                </g>;
             case 'coil':
             default:
                 return <Coil left={275.7} top={182} active={this.props.data.CWUType.value} />;
@@ -25,25 +28,8 @@ class CWU extends Component {
 
     render() {
         return <g className={'CWU'}>
-            <Pipe
-                id={'CWU_1'}
-                active={true}
-                activeColor={'hot'}
-                d={'M 5 5 L 192 5 S 200 5 200 13 L 200 30'}
-                left={106}
-                top={5}
-            />
-            <Pipe
-                id={'CWU_1_1'}
-                active={true}
-                activeColor={'cold'}
-                d={'M 5 5 L 30 5 '}
-                left={226}
-                top={220}
-            />
-
             {
-                this.props.data.CO.value && <g>
+                this.props.data.CO.visible && <g>
                     <Pipe
                         id={'CWU_2'}
                         active={true}
@@ -63,7 +49,7 @@ class CWU extends Component {
                 </g>
             }
             {
-                !this.props.data.CO.value && <g>
+                !this.props.data.CO.visible && <g>
                     <Pipe
                         id={'CWU_2'}
                         active={true}
@@ -82,6 +68,39 @@ class CWU extends Component {
                     />
                 </g>
             }
+
+            {
+                this.props.data.CWUCirc.visible && <g>
+                    <Pipe
+                        id={'CWU_Circulation'}
+                        active={this.props.data.CWUCirc.value}
+                        activeColor={'hot'}
+                        d={'M 5 5 L 5 112 S 5 120 13 120 L 140 120'}
+                        left={120}
+                        top={5}
+                    />
+                    <Pump left={112.5} top={40} active={this.props.data.CWUCirc.value} />
+                    <ReadField left={135} param={'p146'} top={80} />
+                </g>
+            }
+
+            <Pipe
+                id={'CWU_1'}
+                active={true}
+                activeColor={'hot'}
+                d={'M 5 5 L 192 5 S 200 5 200 13 L 200 30'}
+                left={106}
+                top={5}
+            />
+            <Pipe
+                id={'CWU_1_1'}
+                active={true}
+                activeColor={'cold'}
+                d={'M 5 5 L 30 5 '}
+                left={226}
+                top={220}
+            />
+
 
             <Boiler left={255.7} top={30.5} />
 
