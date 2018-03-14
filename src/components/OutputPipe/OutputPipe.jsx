@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 class OutputPipe extends Component {
@@ -20,15 +20,15 @@ class OutputPipe extends Component {
 
     render() {
         return (
-            <g className="OutputPipe" transform={"translate(" + this.props.left + " " + this.props.top + ")"}>
+            <g className='OutputPipe' transform={'translate(' + this.props.left + ' ' + this.props.top + ')'}>
                 <rect
-                    x="0"
-                    y="0"
-                    width="95.509003"
-                    height="9.4820004"
-                    rx="1.4220989"
-                    ry="1.4220989"
-                    style={{fill: this.getColor(), fillRule:"evenodd", strokeWidth:"0.26849282"}} />
+                    x='0'
+                    y='0'
+                    width='95.509003'
+                    height='9.4820004'
+                    rx='1.4220989'
+                    ry='1.4220989'
+                    style={{fill: this.getColor(), fillRule:'evenodd', strokeWidth:'0.26849282'}} />
             </g>
         )
     }

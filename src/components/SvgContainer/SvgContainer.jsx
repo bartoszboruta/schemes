@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import { connect } from "react-redux";
+import { connect } from 'react-redux';
 
 class SvgContainer extends Component {
     getHeight() {
@@ -10,8 +10,8 @@ class SvgContainer extends Component {
     render() {
         return <svg
                     height={this.getHeight()}
-                    viewBox={"-5 0 " + this.props.width +" " + this.props.height}
-                    width={"100%"}
+                    viewBox={'-5 0 ' + this.props.width +' ' + this.props.height}
+                    width={'100%'}
                 >
             {
                 this.props.children

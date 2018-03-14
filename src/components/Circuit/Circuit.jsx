@@ -1,12 +1,12 @@
-import React, {Component} from "react";
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
-import { Pipe, Pump } from "../";
+import { Pipe, Pump } from '../';
 
 class Circuit extends Component {
 
     render() {
         return (
-            <g className="Circuit" transform={"translate(" + this.props.left + " " + this.props.top + ")"}>
+            <g className='Circuit' transform={'translate(' + this.props.left + ' ' + this.props.top + ')'}>
                 <Pipe
                     id={'circuit_2'}
                     active={this.props.active}
