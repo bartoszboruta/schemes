@@ -14,3 +14,5 @@ export * from './OutputPipe';
 export * from './Pump';
 export * from './Circuit';
 export * from './Valve';
+export * from './DateRead';
+export * from './TriConnector';

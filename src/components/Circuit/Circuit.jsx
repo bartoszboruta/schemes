@@ -10,7 +10,10 @@ class Circuit extends Component {
                 <Pipe
                     id={'circuit_2'}
                     active={this.props.active}
-                    activeColor={this.props.reversedColors ? 'hot' : 'cold'}
+                    activeColor={this.props.reversed ? 'hot' : 'cold'}
+                    begin={this.props.begin}
+                    direction={'reversed'}
+                    duration={5.5}
                     d={'M 5 145 L 5 5'}
                     left={22}
                     top={-125}
@@ -18,11 +21,13 @@ class Circuit extends Component {
                 <Pipe
                     id={'circuit_1'}
                     active={this.props.active}
-                    activeColor={this.props.reversedColors ? 'cold' : 'hot'}
+                    activeColor={this.props.reversed ? 'cold' : 'hot'}
+                    begin={this.props.begin + 3}
+                    duration={5.5}
                     d={'M 5 125 L 5 5'}
                     top={-125}
                 />
-                <Pump left={15} top={-90} active={this.props.active}/>
+                <Pump left={this.props.reversed ? -7.5 : 15} top={-90} active={this.props.active}/>
             </g>
         )
     }
@@ -32,14 +37,18 @@ export { Circuit }
 
 Circuit.propTypes = {
     active: PropTypes.bool,
+    begin: PropTypes.number,
+    duration: PropTypes.number,
     left: PropTypes.number,
-    reversedColors: PropTypes.bool,
+    reversed: PropTypes.bool,
     top: PropTypes.number,
 };
 
 Circuit.defaultProps = {
     active: false,
+    begin: 0,
+    duration: 0,
     left: 0,
-    reversedColors: false,
+    reversed: false,
     top: 0,
 };

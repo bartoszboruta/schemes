@@ -4,16 +4,19 @@ import { connect } from "react-redux";
 import { bindActionCreators } from 'redux';
 import { updateData, updateDimensions } from './actions';
 import { Split } from './schemes';
-import { SplitPanel } from './panels'
 
 class App extends Component {
     componentDidMount() {
         const data = { //example
+            date: {
+                fill: '#00b100',
+                value: '15-12-2017 14:01:50'
+            },
             CWU: {
                 value: true,
                 visible: true,
                 type: {
-                    name: 'condenser',
+                    name: 'coil', //condenser / coil
                     value: true
                 },
                 additionalHeater: {
@@ -22,20 +25,20 @@ class App extends Component {
                     value: true,
                 },
                 circulation: {
-                    value: false,
+                    value: true,
                     visible: true,
                 },
             },
 
             CO: {
                 visible: true,
-                value: true,
+                value: false,
                 type: {
-                    name: 'boiler', //noBoiler
+                    name: 'boiler', //noBoiler / boiler
                     value: true
                 },
                 additionalHeater: {
-                    name: 'automatic_boiler', //heater
+                    name: 'heater', //heater /automatic_boiler
                     unit: '',
                     value: true,
                 }
@@ -111,7 +114,6 @@ class App extends Component {
                 value: 0
             },
         };
-
         window.addEventListener("resize", this.updateDimensions.bind(this));
         this.props.updateData(data);
         this.updateDimensions()
@@ -128,10 +130,7 @@ class App extends Component {
 
     render() {
         return (
-            <div>
-                <Split />
-                {/*<SplitPanel />*/}
-            </div>
+            <Split />
         );
     }
 }

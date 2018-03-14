@@ -95,7 +95,6 @@ class FlowHeater extends Component {
                     }}
                     clipPath="url(#SVGID_2_-1)"
                     d="m 79.381,106.624 v 0.119 3.548 0.12 H 61.215 v -0.12 -3.548 -0.119 z m -0.225,0.239 H 61.439 v 3.309 h 17.717 z"
-                    id="heater2n"
                     transform="matrix(4.8565804,0,0,4.3173383,-297.29557,-460.33188)" />
             </g>
         )

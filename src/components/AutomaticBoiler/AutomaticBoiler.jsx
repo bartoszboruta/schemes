@@ -4,7 +4,7 @@ import { Connector, Pipe, Pump } from "../";
 
 class AutomaticBoiler extends Component {
     static getGradients() {
-        return <defs id="defs6620">
+        return <defs>
                 <linearGradient
                     id="SVGID_60_"
                     gradientUnits="userSpaceOnUse"
@@ -86,12 +86,14 @@ class AutomaticBoiler extends Component {
                 }
 
                 <g>
-
                     <Pipe
                         id={'automaticBoiler_1'}
                         active={this.props.active}
                         activeColor={'hot'}
+                        begin={2}
                         d={'M 5 40 L 77 40 S 85 40 85 32 L 85 5'}
+                        direction={'reversed'}
+                        duration={4}
                         left={-65}
                         top={100}
                     />
@@ -102,6 +104,7 @@ class AutomaticBoiler extends Component {
                         active={this.props.active}
                         activeColor={'cold'}
                         d={'M 5 65 L 102 65 S 110 65 110 57 L 110 5'}
+                        duration={5}
                         left={-65}
                         top={100}
                     />
