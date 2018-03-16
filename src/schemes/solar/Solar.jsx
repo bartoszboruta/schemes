@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { SvgContainer } from '../../components/SvgContainer';
-import { SolarPanel, FlowMeter, Boiler, Shower } from '../../components';
+import { SolarPanel, FlowMeter, Boiler, Shower, PoolPump, PoolTank, TriValve } from '../../components';
 import PropTypes from 'prop-types';
 
 class Solar extends Component {
@@ -11,6 +11,9 @@ class Solar extends Component {
             <Boiler left={230} top={200} />
             <FlowMeter left={0} top={0} />
             <Shower left={100} top={0} />
+            <PoolPump left={200} top={0} />
+            <PoolTank left={300} top={0} />
+            <TriValve left={300} top={100} direction={'bottom'} />
         </SvgContainer>
     }
 }

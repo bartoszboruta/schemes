@@ -130,7 +130,7 @@ class App extends Component {
 
     render() {
         return (
-            <Split />
+            <Solar />
         );
     }
 }

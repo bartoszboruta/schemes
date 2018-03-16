@@ -19,3 +19,6 @@ export * from './TriConnector';
 export * from './SolarPanel';
 export * from './FlowMeter';
 export * from './Shower';
+export * from './PoolPump';
+export * from './PoolTank';
+export * from './TriValve';
