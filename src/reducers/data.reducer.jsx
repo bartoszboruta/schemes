@@ -10,6 +10,7 @@ const initialState = {
         additionalHeater: {},
         circulation: {}
     },
+    date: {},
     PC1: {},
     PC2: {},
     Output: {

@@ -1,4 +1,4 @@
-import React, {Component} from "react";
+import React, {Component} from 'react';
 import PropTypes from 'prop-types';
 
 class Pipe extends Component {
@@ -10,37 +10,49 @@ class Pipe extends Component {
             case 'cold':
                 return '#4444ea';
             default:
-                return 'gray';
+                return '#666666';
+        }
+    }
+
+    getDirection() {
+        return this.props.direction === 'reversed' && {
+            keyPoints: '1;0',
+            keyTimes: '0;1'
         }
     }
 
     render() {
         return (
-            <g className="Pipe" transform={"translate(" + this.props.left + " " + this.props.top + ")"}>
+            <g className='Pipe' transform={'translate(' + this.props.left + ' ' + this.props.top + ')'}>
                 <path
+                    d={ this.props.d }
+                    id={ this.props.id }
                     style={{
-                        fill: "none",
+                        fill: 'none',
                         stroke: this.getColor(),
                         strokeWidth: this.props.strokeWidth
                     }}
-                    id={ this.props.id }
-                    d={ this.props.d }
                 />
                 {
-                    this.props.active && this.props.anime &&
+                    this.props.active && this.props.anime && this.props.duration &&
                         <circle
+                            cx='0'
+                            cy='0'
                             fill={this.getColor()}
-                            r="4" cx="0" cy="0">
-                                <animateMotion
-                                    dur="10s"
-                                    rotate="auto"
-                                    repeatCount="indefinite"
-                                    keyPoints="1;0"
-                                    keyTimes="0;1"
-                                    calcMode="linear"
-                                >
-                                    <mpath xlinkHref={ '#' + this.props.id } />
-                                </animateMotion>
+                            r='4'
+                        >
+                            <animateMotion
+                                begin={this.props.begin}
+                                calcMode='linear'
+                                dur={this.props.duration}
+                                repeatCount='indefinite'
+                                rotate='auto'
+                                {
+                                    ...this.getDirection()
+                                }
+                            >
+                                <mpath xlinkHref={ '#' + this.props.id } />
+                            </animateMotion>
                         </circle>
                 }
             </g>
@@ -54,7 +66,10 @@ Pipe.propTypes = {
     active: PropTypes.bool,
     anime: PropTypes.bool,
     activeColor: PropTypes.string,
+    begin: PropTypes.number,
     d: PropTypes.string,
+    direction: PropTypes.oneOf(['normal', 'reversed']),
+    duration: PropTypes.number,
     left: PropTypes.number,
     strokeWidth: PropTypes.number,
     top: PropTypes.number,
@@ -64,7 +79,10 @@ Pipe.defaultProps = {
     active: false,
     anime: true,
     activeColor: '',
+    begin: 0,
     d: '',
+    direction: 'normal',
+    duration: 0,
     left: 0,
     strokeWidth: 3,
     top: 0,
