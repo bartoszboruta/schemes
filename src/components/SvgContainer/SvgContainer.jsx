@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 class SvgContainer extends Component {
     getHeight() {
-        return this.props.dimensions.height > this.props.height ? this.props.height : this.props.dimensions.height;
+        return this.props.dimensions.height > this.props.height ? this.props.dimensions.height : this.props.dimensions.height;
     }
 
     render() {

@@ -16,3 +16,6 @@ export * from './Circuit';
 export * from './Valve';
 export * from './DateRead';
 export * from './TriConnector';
+export * from './SolarPanel';
+export * from './FlowMeter';
+export * from './Shower';
