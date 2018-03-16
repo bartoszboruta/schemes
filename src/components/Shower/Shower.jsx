@@ -111,7 +111,6 @@ class Shower extends Component {
             <path
                 d="m 0.51772242,14.559411 c -0.0189685,0.0446 -0.030209,0.094 -0.0389406,0.15087 -0.0577083,0.32585 -0.0577083,0.95069 -0.0189685,1.28089 0.0375355,0.33377 0.11148243,0.37837 1.97010158,0.39853 5.5738,0.0659 10.7428701,0.0659 16.3166701,0 1.859792,-0.02 1.934081,-0.0648 1.971215,-0.39853 0.03754,-0.3302 0.03754,-0.95504 -0.02258,-1.28089 -0.01053,-0.0567 -0.02248,-0.10627 -0.03945,-0.15087 z"
                 style={{fill:'url(#linearGradient3579-0-5)', fillRule:'evenodd', stroke:'none',strokeWidth:1.78004003}} />
-
         </g>
     }
 }
@@ -119,15 +118,11 @@ class Shower extends Component {
 export { Shower }
 
 Shower.propTypes = {
-    data: PropTypes.object,
-    direction: PropTypes.oneOfType(['horizontal', 'vertical']),
     left: PropTypes.number,
     top: PropTypes.number,
 };
 
 Shower.defaultProps = {
-    data: {},
-    direction: 'vertical',
     left: 0,
     top: 0,
 };

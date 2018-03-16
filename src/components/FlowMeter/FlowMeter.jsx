@@ -29,14 +29,12 @@ class FlowMeter extends Component {
 export { FlowMeter }
 
 FlowMeter.propTypes = {
-    data: PropTypes.object,
     direction: PropTypes.oneOfType(['horizontal', 'vertical']),
     left: PropTypes.number,
     top: PropTypes.number,
 };
 
 FlowMeter.defaultProps = {
-    data: {},
     direction: 'vertical',
     left: 0,
     top: 0,
