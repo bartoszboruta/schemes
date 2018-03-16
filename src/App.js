@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import { connect } from "react-redux";
 import { bindActionCreators } from 'redux';
 import { updateData, updateDimensions } from './actions';
-import { Split } from './schemes';
+import { Split, Solar } from './schemes';
 
 class App extends Component {
     componentDidMount() {
@@ -32,7 +32,7 @@ class App extends Component {
 
             CO: {
                 visible: true,
-                value: false,
+                value: true,
                 type: {
                     name: 'boiler', //noBoiler / boiler
                     value: true
@@ -91,11 +91,11 @@ class App extends Component {
             },
             Output: {
                 circuit1: {
-                    value: true,
+                    value: false,
                     visible: true,
                 },
                 circuit2: {
-                    value: true,
+                    value: false,
                     visible: true,
                 },
                 circuit3: {
@@ -103,7 +103,7 @@ class App extends Component {
                     visible: true,
                 },
                 temperatureSensor: {
-                    name: 'analog'
+                    name: 'analog' //digital
                 },
                 value: true,
             },
