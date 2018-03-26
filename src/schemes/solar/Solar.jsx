@@ -1,37 +1,22 @@
 import React, { Component } from 'react';
-import { connect } from 'react-redux';
-import { SvgContainer } from '../../components/SvgContainer';
-import { SolarPanel, FlowMeter, Boiler, Shower, PoolPump, PoolTank, TriValve } from '../../components';
 import PropTypes from 'prop-types';
 
+import { Scheme1, Scheme2, Scheme3, Scheme4, Scheme6 } from './schemes';
+
 class Solar extends Component {
-    render() {
-        return <SvgContainer width={840} height={553}>
-            <SolarPanel left={30} />
-            <Boiler left={230} top={200} />
-            <FlowMeter left={0} top={0} />
-            <Shower left={100} top={0} />
-            <PoolPump left={200} top={0} />
-            <PoolTank left={300} top={0} />
-            <TriValve left={300} top={100} direction={'bottom'} />
-        </SvgContainer>
-    }
+  render() {
+    return <Scheme6 />
+  }
 }
 
-const mapStateToProps = (state) => {
-    const { data } = state;
-    return {
-        data,
-    };
-};
-
-const ConnectedSolar = connect(mapStateToProps)(Solar);
-export { ConnectedSolar as Solar }
+export { Solar }
 
 Solar.propTypes = {
-    data: PropTypes.object,
+  height: PropTypes.number,
+  width: PropTypes.number,
 };
 
 Solar.defaultProps = {
-    data: {}
+  height: 0,
+  width: 0,
 };

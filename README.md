@@ -5,6 +5,8 @@ You can find the most recent version of this guide [here](https://github.com/fac
 
 ## Example config for split
 ```js
+// height={553} width={840} //to app.js
+
 const data = {
       date: {
           fill: '#00b100',

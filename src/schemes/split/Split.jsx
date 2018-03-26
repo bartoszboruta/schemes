@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { SvgContainer } from '../../components/SvgContainer';
-import { DateRead, ReadField, HeatPump, HeatPumpOutside, Wall, Pipe, Pump } from '../../components';
+import { Clock, ReadField, HeatPump, HeatPumpOutside, Wall, Pipe, Pump } from '../../components';
 import { CWU, CO } from './parts';
 import PropTypes from 'prop-types';
 
 class Split extends Component {
     render() {
-        return <SvgContainer width={840} height={553}>
+        return <SvgContainer height={this.props.height} width={this.props.width} >
 
-            <DateRead left={0} top={0} />
+            <Clock left={799}/>
             <Pipe
                 id={'split_1'}
                 active={this.props.data.PC1.value || this.props.data.PC2.value}

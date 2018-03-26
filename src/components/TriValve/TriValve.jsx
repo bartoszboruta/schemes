@@ -120,7 +120,7 @@ class TriValve extends Component {
 export { TriValve }
 
 TriValve.propTypes = {
-    direction: PropTypes.oneOfType(['right', 'top', 'bottom', 'left']),
+    direction: PropTypes.oneOf(['right', 'top', 'bottom', 'left']),
     left: PropTypes.number,
     top: PropTypes.number,
 };

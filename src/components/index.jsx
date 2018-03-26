@@ -21,4 +21,6 @@ export * from './FlowMeter';
 export * from './Shower';
 export * from './PoolPump';
 export * from './PoolTank';
+export * from './Furnace';
+export * from './Clock';
 export * from './TriValve';
