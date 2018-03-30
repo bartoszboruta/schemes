@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { SvgContainer, SolarPanel, Boiler, Coil, Connector, Pipe, Pump, FlowMeter, ReadField, Clock, Shower, TriConnector, TriValve, Overlay } from '../../../components';
+import { SvgContainer, SolarPanel, Boiler, Coil, Connector, Pipe, Pump, FlowMeter, ReadField, Clock, Shower, TriConnector, Overlay, Pause } from '../../../components';
 import PropTypes from 'prop-types';
 
 class Scheme12 extends Component {
@@ -180,6 +180,7 @@ class Scheme12 extends Component {
     return <SvgContainer width={650} height={558.1}>
       {this.renderPipes()}
       <Shower left={614.25} top={165} />
+      <Pause />
       <SolarPanel left={50} />
       <Clock left={615}/>
       {this.renderCirculation()}
