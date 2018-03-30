@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { SvgContainer, SolarPanel, Boiler, Coil, Connector, Pipe, Pump, FlowMeter, ReadField, Clock, Shower, PoolPump, PoolTank, TriConnector, TriValve, Overlay } from '../../../components';
+import { SvgContainer, SolarPanel, Boiler, Coil, Connector, Pipe, Pump, FlowMeter, ReadField, Clock, Shower, PoolPump, PoolTank, TriConnector, Overlay } from '../../../components';
 import PropTypes from 'prop-types';
 
 class Scheme10 extends Component {
@@ -130,7 +130,7 @@ class Scheme10 extends Component {
   }
 
   renderPumpK() {
-    return <g transform={'translate('+ 13 + ' ' + 420 +')'}>
+    return <g transform={'translate('+ 13 + ' ' + 416.5 +')'}>
       <Pump active={this.props.data.p156.value} />
       <ReadField param={'p156'} left={30} top={3} />
     </g>
@@ -159,7 +159,7 @@ class Scheme10 extends Component {
   }
 
   render() {
-    return <SvgContainer width={605} height={558.1}>
+    return <SvgContainer width={650} height={558.1}>
       {this.renderPipes()}
       <Shower left={384.25} top={165} />
       <SolarPanel left={50} />

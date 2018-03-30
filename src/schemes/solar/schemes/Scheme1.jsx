@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { SvgContainer, SolarPanel, Boiler, Coil, Connector, Pipe, Pump, FlowMeter, ReadField, DateRead, Shower } from '../../../components';
+import { SvgContainer, SolarPanel, Boiler, Coil, Clock, Connector, Pipe, Pump, FlowMeter, ReadField, Shower } from '../../../components';
 import PropTypes from 'prop-types';
 
 class Scheme1 extends Component {
@@ -66,16 +66,16 @@ class Scheme1 extends Component {
 
   renderReadFields() {
     return <g>
-      {this.props.data.p128.visible && <ReadField param={'p128'} left={265} />}
-      {this.props.data.p130.visible && <ReadField param={'p130'} left={190} top={352.5} />}
-      {this.props.data.p132.visible && <ReadField param={'p132'} />}
+      {this.props.data.p128.visible && <ReadField param={'p128'} left={256} />}
+      {this.props.data.p130.visible && <ReadField param={'p130'} left={196} top={352.5} />}
+      {this.props.data.p132.visible && <ReadField param={'p132'} left={62} top={237.25} />}
     </g>
   }
 
   renderPumpP() {
     return <g transform={'translate('+ 32 + ' ' + 300 +')'}>
       <Pump active={this.props.data.p156.value} />
-      <ReadField param={'p156'} left={35} top={3} />
+      <ReadField param={'p156'} left={30} top={3} />
     </g>
   }
 
@@ -83,11 +83,11 @@ class Scheme1 extends Component {
     return <g>
       {this.props.data.p152.visible && <g transform={'translate('+ 34 + ' ' + 270 +')'}>
         <FlowMeter/>
-        <ReadField param={'p152'} left={33} />
+        <ReadField param={'p152'} left={28} />
       </g>}
       {this.props.data.p292.visible && <g transform={'translate('+ 190 + ' ' + 393.5 +')'}>
         <FlowMeter direction={'horizontal'} />
-        <ReadField param={'p292'} left={-25} top={30} />
+        <ReadField param={'p292'} left={-25} top={26} />
       </g>}
     </g>
   }
@@ -97,7 +97,7 @@ class Scheme1 extends Component {
       {this.renderPipes()}
       <Shower left={384.25} top={165} />
       <SolarPanel left={50} />
-      <DateRead />
+      <Clock left={400} />
       {this.renderBoiler()}
       {this.renderPumpP()}
       {this.renderReadFields()}

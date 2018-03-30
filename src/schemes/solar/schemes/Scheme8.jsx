@@ -136,12 +136,6 @@ class Scheme8 extends Component {
     return (
       <g>
         <Boiler left={500} top={200} />
-        <Coil
-          active={this.props.data.p154.value}
-          direction={'right'}
-          left={270}
-          top={340}
-        />
         {Scheme8.renderConnectors()}
       </g>
     );
@@ -196,7 +190,7 @@ class Scheme8 extends Component {
 
   render() {
     return (
-      <SvgContainer width={650} height={458.1}>
+      <SvgContainer width={650} height={558.1}>
         {this.renderPipes()}
         {this.renderCirculation()}
         <Shower left={614.25} top={165} />

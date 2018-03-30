@@ -198,7 +198,7 @@ class Scheme6 extends Component {
 
   render() {
     return (
-      <SvgContainer width={600} height={458.1}>
+      <SvgContainer width={650} height={558.1}>
         {this.renderPipes()}
         {this.renderCirculation()}
         <Shower left={384.25} top={165} />
