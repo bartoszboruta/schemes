@@ -151,7 +151,7 @@ class Scheme8 extends Component {
           <ReadField param={'p130'} left={196} top={352.5} />
         )}
         {this.props.data.p132.visible && (
-          <ReadField param={'p132'} left={62} top={237.25} />
+          <ReadField param={'p132'} left={62} top={236.5} />
         )}
         {this.props.data.p134.visible && (
           <ReadField param={'p134'} left={425.5} top={352.5} />

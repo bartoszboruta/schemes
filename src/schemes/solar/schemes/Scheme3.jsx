@@ -87,7 +87,7 @@ class Scheme3 extends Component {
     return <g>
       {this.props.data.p128.visible && <ReadField param={'p128'} left={265} />}
       {this.props.data.p130.visible && <ReadField param={'p130'} left={190} top={352.5} />}
-      {this.props.data.p132.visible && <ReadField param={'p132'} left={67} top={237.25} />}
+      {this.props.data.p132.visible && <ReadField param={'p132'} left={67} top={236.5} />}
       {this.props.data.p134.visible && <ReadField param={'p134'} left={378} top={249} />}
     </g>
   }
