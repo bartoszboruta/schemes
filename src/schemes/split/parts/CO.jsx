@@ -115,7 +115,8 @@ class CO extends Component {
                     <Connector left={341} top={311} />
                     <Connector left={341} top={481} />
 
-                    <ReadField left={180} param={"p132"} top={420} />
+
+                    <ReadField left={180} param={"p132"} top={420}  />
                 </g>
             }
 

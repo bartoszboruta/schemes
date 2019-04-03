@@ -103,14 +103,14 @@ class AutomaticBoiler extends Component {
                         id={'automaticBoiler_2'}
                         active={this.props.active}
                         activeColor={'cold'}
-                        d={'M 5 65 L 102 65 S 110 65 110 57 L 110 5'}
+                        d={'M 5 81 L 104.2 81 S 110 81 110 75.2 L 110 5'}
                         duration={5}
                         left={-65}
                         top={100}
                     />
-                    <Connector left={-69} top={141} />
+                    <Connector left={-69} top={157} />
 
-                    <Pump top={125} left={32} active={this.props.active} activeDuration={'2s'}/>
+                    <Pump top={133} left={32} active={this.props.active} activeDuration={2}/>
 
                     <rect
                         style={{clipRule:'evenodd',fill:'#999999', fillRule:'evenodd', strokeWidth:'0.26458341'}}

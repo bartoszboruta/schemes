@@ -31,9 +31,18 @@ class Coil extends Component {
         }
     }
 
+    static getDirection(direction) {
+        switch(direction) {
+            case 'right':
+                return 'matrix(-1,0,0,1,76.032,0)';
+            default:
+                return '';
+        }
+    }
+
     render() {
         return (
-            <g className='Coil' transform={'translate(' + this.props.left + ' ' + this.props.top + ')'}>
+            <g className='Coil' transform={'translate(' + this.props.left + ' ' + this.props.top + ') ' + Coil.getDirection(this.props.direction)}>
                 {
                     Coil.getPaths().map((i, k) => {
                             return <path d={i} key={k} style={{fill: Coil.getColors(this.props.active)[k]}} />
@@ -49,12 +58,14 @@ export { Coil }
 
 Coil.propTypes = {
     active: PropTypes.bool,
+    direction: PropTypes.oneOf(['left', 'right']),
     left: PropTypes.number,
     top: PropTypes.number,
 };
 
 Coil.defaultProps = {
     active: false,
+    direction: 'left',
     left: 0,
     top: 0,
 };

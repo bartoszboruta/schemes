@@ -5,7 +5,7 @@ class OutputPipe extends Component {
 
     getColor() {
         if (!this.props.active) {
-            return 'gray';
+            return '#666666';
         }
 
         switch (this.props.activeColor) {
@@ -14,7 +14,7 @@ class OutputPipe extends Component {
             case 'cold':
                 return '#4444ea';
             default:
-                return 'gray';
+                return '#666666';
         }
     }
 

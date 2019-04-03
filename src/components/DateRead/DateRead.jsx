@@ -14,9 +14,12 @@ class DateRead extends Component {
                         fontFamily: 'Sans',
                         fill: this.props.data.date.fill,
                     }}
-                    x={ this.props.dimensions.width }
-                    y='0'>
-                    { this.props.data.date.value }
+                    x={0}
+                    y={0}>
+                    {
+                      // this.props.data.date.value
+                      new Date().toLocaleString()
+                    }
                 </text>
             </g>
         )

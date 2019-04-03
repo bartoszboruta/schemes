@@ -63,7 +63,7 @@ class Pipe extends Component {
 export { Pipe }
 
 Pipe.propTypes = {
-    active: PropTypes.bool,
+    active: PropTypes.oneOfType([PropTypes.bool, PropTypes.number]),
     anime: PropTypes.bool,
     activeColor: PropTypes.string,
     begin: PropTypes.number,
